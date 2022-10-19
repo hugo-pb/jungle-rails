@@ -10,8 +10,8 @@
   <span class="soldout <%= 'd-none ' if product.quantity > 0 %>">
   Sold Out
   </span>
-    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
-    method: :post do %>
+    <%= button_to add_item_cart_path(product_id: product.id),   class:(product.quantity > 0 ? 'btn ' : 'btn disabled'),
+    method: :post do%>
       <%= fa_icon "shopping-cart", text: 'Add' %> 
     <% end %>
   </div>
