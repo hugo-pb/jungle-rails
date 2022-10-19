@@ -1,6 +1,12 @@
 class CartsController < ApplicationController
 
   def show
+    cart = enhanced_cart
+  if cart.length > 0
+    render :show
+  else
+     render :empty_cart
+  end 
   end
 
   def add_item
