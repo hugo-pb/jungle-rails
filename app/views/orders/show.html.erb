@@ -28,7 +28,7 @@
             TOTAL:
           </th>
           <th>
-            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
+            <%= humanized_money_with_symbol @order.total_cents / 100.0 %>
           </th>
         </tr>
         <tr>
@@ -43,5 +43,5 @@
     </table>
   </div>
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-<%= raise %>
+<%# <%= raise %> %>
 </section>
