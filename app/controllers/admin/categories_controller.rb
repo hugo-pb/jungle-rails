@@ -2,6 +2,8 @@ class Admin::CategoriesController < ApplicationController
 
   def index
     @categories = Category.order(id: :desc).all
+    @something = 'hello'
+    # raise @categories.inspect
   end
 
   def new
