@@ -1,15 +1,15 @@
 class Admin::CategoriesController < ApplicationController
 
   def index
-    @categories = category.order(id: :desc).all
+    @categories = Category.order(id: :desc).all
   end
 
   def new
-    @category = category.new
+    @category = Category.new
   end
 
   def create
-    @category = category.new(category_params)
+    @category = Category.new(category_params)
 
     if @category.save
       redirect_to [:admin, :categories], notice: 'category created!'
