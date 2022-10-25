@@ -45,11 +45,20 @@ RSpec.describe User, type: :model do
     before do
       @user = User.create(name: 'test', email: 'TEST@TEST.com', password: "1234", password_confirmation: "1234")
     end
-   it 'It must be created with a password and password_confirmation fields' do
-     
+   it 'It logins ' do
       
       user_testing = User.authenticate_with_credentials('TEST@TEST.com', '1234')
-      p user_testing
+      expect(user_testing).to be_present
+
+    end
+    it "logs in even with extra '  '"   do
+      user_testing = User.authenticate_with_credentials('  TEST@TEST.com  ', '1234')
+      expect(user_testing).to be_present
+
+    end
+    it 'It  logs in even with case difference' do
+      user_testing = User.authenticate_with_credentials('TEsT@TEST.com', '1234')
+     
       expect(user_testing).to be_present
 
     end
