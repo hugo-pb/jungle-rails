@@ -65,7 +65,7 @@ RSpec.describe Product, type: :model do
           category_id:  @category.id
         )
         @product.save
-         expect(@product.category).to be_present
+         expect(@product).to be_present
       end
     end
   end
