@@ -30,5 +30,10 @@ RSpec.describe User, type: :model do
       @user.save 
       expect(@user).to be_invalid
     end
+    it 'password needs to be longer than 3' do
+      @user = User.new(name: 'test', email: 'TEST@TEST.com', password: "12", password_confirmation: "12")
+      @user.save
+      expect(@user).to be_invalid
+    end    
   end
 end
