@@ -6,8 +6,9 @@ class User < ApplicationRecord
      validates :password, :length => { :minimum => 3 }
      validates :name, presence: true
      def self.authenticate_with_credentials(email, pass)
-       user = User.find_by_email(email)
-       p user
+     
+     user = User.where("email ILIKE ?", email.strip).first
+      
        if user && user.authenticate(pass)
         return user
        else
