@@ -2,7 +2,8 @@ describe("Navigation", () => {
   it("should visit root", () => {
     cy.visit("/");
   });
-  it("There is products on the page", () => {
+  it("visits product details", () => {
     cy.get("span").contains("Giant Tea").click();
+    cy.get("div .quantity").contains("stock");
   });
 });
