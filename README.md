@@ -1,6 +1,7 @@
 # Jungle
 
 A mini e-commerce application built with Rails 6.1 and stripe.
+!['img of home page'](https://github.com/hugo-pb/jungle-rails/blob/master/docs/Screen%20Shot%202022-10-26%20at%2010.45.29%20PM.png)
 
 ## Setup
 
